@@ -1,3 +1,4 @@
+import 'package:curso_flutterando_2022/app_controller.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,16 +18,12 @@ class HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Home Page'),
       ),
-      body: Container(
-        height: 200,
-        width: 200,
-        color: Colors.black,
-        child: Center(
-          child: Container(
-            height: 100,
-            width: 100,
-            color: Colors.blue,
-          ),
+      body: Center(
+        child: Switch(
+          value: AppController.istance.isDartTheme,
+          onChanged: (value) {
+            AppController.istance.changeTheme();
+          },
         ),
       ),
       floatingActionButton: FloatingActionButton(
