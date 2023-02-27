@@ -49,9 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                       if (email == 'clinton.almeida10@gmail.com' &&
                           senha == '123') {
                         print('Correto');
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => HomePage()),
-                        );
+                        Navigator.of(context).pushReplacementNamed('/home');
                       }
                     }),
                     child: Text('Entrar'))
