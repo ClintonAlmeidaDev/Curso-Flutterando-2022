@@ -26,6 +26,13 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Container(
+                  width: 100,
+                  height: 100,
+                  child: Image.network(
+                      'https://upload.wikimedia.org/wikipedia/commons/5/53/Wikimedia-logo.png'),
+                ),
+                SizedBox(height: 20),
                 TextField(
                   onChanged: (value) {
                     email = value;
