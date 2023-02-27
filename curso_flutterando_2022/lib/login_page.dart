@@ -33,33 +33,44 @@ class _LoginPageState extends State<LoginPage> {
                 //     'https://upload.wikimedia.org/wikipedia/commons/5/53/Wikimedia-logo.png'),
               ),
               SizedBox(height: 20),
-              TextField(
-                onChanged: (value) {
-                  email = value;
-                },
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(), labelText: 'E-mail'),
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    children: [
+                      TextField(
+                        onChanged: (value) {
+                          email = value;
+                        },
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(), labelText: 'E-mail'),
+                      ),
+                      SizedBox(height: 10),
+                      TextField(
+                        onChanged: (value) {
+                          senha = value;
+                        },
+                        obscureText: true,
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Password'),
+                      ),
+                      SizedBox(height: 15),
+                      ElevatedButton(
+                          onPressed: (() {
+                            if (email == 'clinton.almeida10@gmail.com' &&
+                                senha == '123') {
+                              print('Correto');
+                              Navigator.of(context)
+                                  .pushReplacementNamed('/home');
+                            }
+                          }),
+                          child: Text('Entrar'))
+                    ],
+                  ),
+                ),
               ),
-              SizedBox(height: 10),
-              TextField(
-                onChanged: (value) {
-                  senha = value;
-                },
-                obscureText: true,
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(), labelText: 'Password'),
-              ),
-              SizedBox(height: 15),
-              ElevatedButton(
-                  onPressed: (() {
-                    if (email == 'clinton.almeida10@gmail.com' &&
-                        senha == '123') {
-                      print('Correto');
-                      Navigator.of(context).pushReplacementNamed('/home');
-                    }
-                  }),
-                  child: Text('Entrar'))
             ],
           ),
         ),
