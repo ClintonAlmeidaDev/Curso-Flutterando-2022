@@ -29,8 +29,9 @@ class _LoginPageState extends State<LoginPage> {
                 Container(
                   width: 100,
                   height: 100,
-                  child: Image.network(
-                      'https://upload.wikimedia.org/wikipedia/commons/5/53/Wikimedia-logo.png'),
+                  child: Image.asset('assets/images/logo.png'),
+                  // child: Image.network(
+                  //     'https://upload.wikimedia.org/wikipedia/commons/5/53/Wikimedia-logo.png'),
                 ),
                 SizedBox(height: 20),
                 TextField(
